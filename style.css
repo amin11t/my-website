@@ -1,0 +1,1060 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
+
+body {
+  background: #111;
+  color: #fff;
+  font-family: 'Cairo', 'Tajawal', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  direction: rtl;
+  overflow-x: hidden !important;
+}
+body:before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: url('images/logo - mediava.jpg') center center no-repeat, #111;
+  background-size: 44vw auto;
+  opacity: 0.045;
+  transition: background-size 0.3s;
+}
+@media (max-width: 900px) {
+  body:before {
+    background-size: 70vw auto;
+  }
+}
+@media (max-width: 600px) {
+  body:before {
+    background-size: 95vw auto;
+  }
+}
+main, header, footer, section, div, .hero, .services-short, .pricing-section, .about-values, .portfolio-grid, .testimonials-list, .blog-list, .contact-section {
+  position: relative;
+  z-index: 1;
+}
+/* الهيدر والفوتر (منقول من index.html) */
+header {
+  background: #111;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  border-bottom: 1px solid #222;
+  position: relative;
+  z-index: 1000;
+}
+.logo {
+  color: #FFD700;
+  font-size: 2rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin-left: 20px;
+}
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.main-nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: color 0.2s;
+  padding: 8px 12px;
+}
+.main-nav a.cta-btn {
+  background: #FFD700;
+  color: #111;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+.main-nav a:hover, .main-nav a.cta-btn:hover {
+  color: #FFD700;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+}
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 1003;
+}
+.hamburger span {
+  display: block;
+  width: 30px;
+  height: 3px;
+  background: #FFD700;
+  margin: 5px 0;
+  transition: all 0.3s ease;
+}
+.mobile-nav {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 80%;
+  max-width: 350px;
+  height: 100vh;
+  background: #181818;
+  box-shadow: -2px 0 20px rgba(0, 0, 0, 0.3);
+  z-index: 1002;
+  padding: 80px 30px 30px;
+  transition: right 0.3s ease;
+  overflow-y: auto;
+  direction: rtl;
+}
+.mobile-nav.active {
+  right: 0;
+}
+.mobile-nav a {
+  display: block;
+  color: #FFD700;
+  font-size: 1.2rem;
+  padding: 15px 0;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 215, 0, 0.1);
+  transition: all 0.3s;
+}
+.mobile-nav a:hover {
+  color: #fff;
+  padding-right: 10px;
+}
+.mobile-nav a.cta-btn {
+  background: #FFD700;
+  color: #181818 !important;
+  border-radius: 8px;
+  margin-top: 20px;
+  text-align: center;
+  font-weight: bold;
+  border: none;
+}
+.mobile-nav-overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1001;
+  display: none;
+}
+@media (max-width: 992px) {
+  .main-nav {
+    display: none;
+  }
+  .hamburger {
+    display: block;
+  }
+}
+.hero {
+  background: linear-gradient(120deg, #111 80%, #FFD70022 100%);
+  text-align: center;
+  padding: 80px 20px 60px 20px;
+}
+.hero h1 {
+  color: #FFD700;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+.hero p {
+  color: #fff;
+  font-size: 1.3rem;
+  margin-bottom: 30px;
+}
+.hero .cta-btn {
+  background: #FFD700;
+  color: #111;
+  padding: 14px 38px;
+  border-radius: 30px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 0 15px #FFD70033;
+  transition: background 0.2s, color 0.2s;
+}
+.hero .cta-btn:hover {
+  background: #fff;
+  color: #FFD700;
+}
+.services-short {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 50px 10px 30px 10px;
+  background: #181818;
+}
+.service {
+  background: #222;
+  border-radius: 18px;
+  padding: 30px 20px;
+  text-align: center;
+  min-width: 180px;
+  box-shadow: 0 2px 12px #0002;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.service:hover {
+  transform: translateY(-8px) scale(1.04);
+  box-shadow: 0 6px 24px #FFD70033;
+}
+.service .icon {
+  font-size: 2.5rem;
+  color: #FFD700;
+  margin-bottom: 10px;
+  display: block;
+}
+.service h3 {
+  color: #FFD700;
+  margin-bottom: 10px;
+}
+.why-us {
+  background: #111;
+  padding: 50px 10px 30px 10px;
+  text-align: center;
+}
+.why-us h2 {
+  color: #FFD700;
+  margin-bottom: 30px;
+}
+.why-us div {
+  color: #fff;
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+}
+.testimonials-slider {
+  background: #181818;
+  padding: 50px 10px 30px 10px;
+  text-align: center;
+}
+.testimonials-slider h2 {
+  color: #FFD700;
+  margin-bottom: 30px;
+}
+.testimonial {
+  display: inline-block;
+  background: #222;
+  border-radius: 16px;
+  padding: 20px 18px;
+  margin: 0 10px 20px 10px;
+  color: #fff;
+  min-width: 220px;
+  box-shadow: 0 2px 12px #0002;
+}
+.testimonial img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  border: 2px solid #FFD700;
+}
+.clients-logos {
+  background: #111;
+  padding: 40px 10px 30px 10px;
+  text-align: center;
+}
+.clients-logos h2 {
+  color: #FFD700;
+  margin-bottom: 25px;
+}
+.clients-logos .logos {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+.clients-logos img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  background: #222;
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: 0 2px 8px #FFD70022;
+}
+.cta-end {
+  background: linear-gradient(120deg, #FFD70022 0%, #111 100%);
+  text-align: center;
+  padding: 60px 10px 50px 10px;
+}
+.cta-end h2 {
+  color: #FFD700;
+  margin-bottom: 25px;
+}
+.cta-end .cta-btn {
+  background: #FFD700;
+  color: #111;
+  padding: 14px 38px;
+  border-radius: 30px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 0 15px #FFD70033;
+  transition: background 0.2s, color 0.2s;
+}
+.cta-end .cta-btn:hover {
+  background: #fff;
+  color: #FFD700;
+}
+footer {
+  background: #181818;
+  color: #fff;
+  text-align: center;
+  padding: 40px 20px;
+  border-top: 1px solid #222;
+}
+.footer-links {
+  margin-bottom: 20px;
+}
+.footer-links a {
+  color: #FFD700;
+  margin: 0 10px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+.footer-links a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+.footer-social {
+  margin-bottom: 20px;
+}
+.footer-social a {
+  color: #fff;
+  margin: 0 10px;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: color 0.3s;
+}
+.footer-social a:hover {
+  color: #FFD700;
+}
+.copyright {
+  font-size: 0.9rem;
+  color: #aaa;
+}
+@media (max-width: 768px) {
+  header {
+    padding: 15px 20px;
+  }
+  .logo {
+    font-size: 1.5rem;
+  }
+  .footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .footer-links a {
+    margin: 5px 0;
+  }
+}
+@media (max-width: 480px) {
+  .mobile-nav {
+    width: 85%;
+    padding: 70px 20px 20px;
+  }
+}
+/* أيقونات SVG ذهبية */
+.icon-gold {
+  width: 48px;
+  height: 48px;
+  display: inline-block;
+  margin-bottom: 12px;
+  vertical-align: middle;
+}
+
+/* كروت الخدمات والباقات بشكل عصري */
+.services-short, .pricing-section > div {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 32px;
+  justify-content: center;
+  align-items: stretch;
+  background: linear-gradient(120deg, #181818 80%, #FFD70011 100%);
+  padding-bottom: 40px;
+  border-radius: 24px;
+  margin-bottom: 0;
+}
+.service, .pricing-card {
+  background: linear-gradient(120deg, #232323 80%, #FFD70022 100%);
+  border-radius: 22px;
+  box-shadow: 0 6px 32px #FFD70022, 0 1.5px 8px #0005;
+  padding: 38px 24px 32px 24px;
+  text-align: center;
+  position: relative;
+  transition: transform 0.18s, box-shadow 0.18s, border 0.18s;
+  border: 2px solid transparent;
+  overflow: hidden;
+}
+.service:hover, .pricing-card:hover {
+  transform: translateY(-10px) scale(1.035);
+  box-shadow: 0 12px 48px #FFD70055, 0 2px 12px #FFD70033;
+  border: 2px solid #FFD700;
+}
+.service h3, .pricing-card h3 {
+  color: #FFD700;
+  margin-bottom: 12px;
+  font-size: 1.25rem;
+}
+.service p, .pricing-card ul, .pricing-card p {
+  color: #fff;
+  font-size: 1.08rem;
+}
+.pricing-card ul {
+  margin: 0 0 18px 0;
+  padding: 0;
+  list-style: none;
+  text-align: right;
+}
+.pricing-card ul li {
+  margin-bottom: 6px;
+  color: #FFD700;
+  font-weight: 500;
+  font-size: 1rem;
+}
+.pricing-card .cta-btn, .service .cta-btn {
+  margin-top: 18px;
+}
+
+/* خلفية مميزة للأقسام */
+.pricing-section {
+  background: linear-gradient(120deg, #FFD70011 0%, #181818 100%);
+  border-radius: 24px;
+  margin: 40px 0 0 0;
+  padding: 40px 0 30px 0;
+}
+
+/* تحسين زر CTA */
+.cta-btn {
+  background: linear-gradient(90deg, #FFD700 60%, #fff700 100%);
+  color: #111 !important;
+  padding: 14px 38px;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 0 15px #FFD70033;
+  border: none;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+  display: inline-block;
+}
+.cta-btn:hover {
+  background: #fff;
+  color: #FFD700 !important;
+  box-shadow: 0 0 24px #FFD70077;
+}
+
+/* ستايل موحد للروابط */
+a {
+  color: #FFD700;
+  text-decoration: none;
+  transition: color 0.18s, box-shadow 0.18s, text-decoration 0.18s;
+  border-radius: 6px;
+  padding: 2px 4px;
+}
+a:hover, a:focus {
+  color: #fff700;
+  text-decoration: underline;
+  box-shadow: 0 2px 8px #FFD70033;
+  background: #FFD70022;
+}
+.footer-links a, .footer-social a {
+  color: #FFD700;
+  font-weight: bold;
+  margin: 0 8px;
+  padding: 2px 6px;
+  border-radius: 6px;
+}
+.footer-links a:hover, .footer-social a:hover {
+  color: #fff;
+  background: #FFD70033;
+  text-decoration: underline;
+}
+.portfolio-btn, .blog-post .cta-btn {
+  margin-top: 12px;
+  display: inline-block;
+  background: linear-gradient(90deg, #FFD700 60%, #fff700 100%);
+  color: #111 !important;
+  padding: 10px 28px;
+  border-radius: 22px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  box-shadow: 0 0 8px #FFD70033;
+  border: none;
+  cursor: pointer;
+}
+.portfolio-btn:hover, .blog-post .cta-btn:hover {
+  background: #fff;
+  color: #FFD700 !important;
+  box-shadow: 0 0 18px #FFD70077;
+}
+/* تحسين القوائم داخل الكروت */
+.service ul, .pricing-card ul, .about-block ul {
+  list-style: none;
+  padding: 0 0 0 0;
+  margin: 0 0 12px 0;
+}
+.service ul li, .pricing-card ul li, .about-block ul li {
+  color: #FFD700;
+  font-size: 1rem;
+  margin-bottom: 6px;
+  padding-right: 0.5em;
+  position: relative;
+}
+.service ul li:before, .pricing-card ul li:before, .about-block ul li:before {
+  content: '✔';
+  color: #FFD700;
+  margin-left: 8px;
+  font-size: 1.1em;
+  vertical-align: middle;
+}
+/* ضبط الهوامش والتباعد للكروت والأقسام */
+.service, .pricing-card, .about-block, .portfolio-item, .testimonial, .blog-post {
+  margin-bottom: 0 !important;
+  margin-top: 0 !important;
+}
+.services-short, .pricing-section > div, .about-values, .about-numbers > div, .portfolio-grid, .testimonials-list, .blog-list {
+  margin-bottom: 0 !important;
+  margin-top: 0 !important;
+}
+
+/* ====== Custom Pricing Row Layout ====== */
+.pricing-row {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 32px;
+  justify-content: center;
+  margin-bottom: 32px;
+}
+.pricing-row.single {
+  justify-content: center;
+  flex-wrap: nowrap;
+}
+.pricing-row.single .pricing-card {
+  margin-left: 0;
+  margin-right: 0;
+}
+@media (max-width: 900px) {
+  .pricing-row {
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+}
+@media (max-width: 600px) {
+  .pricing-row {
+    flex-direction: column;
+    gap: 18px;
+    align-items: center;
+  }
+}
+
+@media (max-width: 900px) {
+  .services-short, .pricing-section > div, .about-values, .about-numbers > div, .portfolio-grid, .testimonials-list, .blog-list {
+    grid-template-columns: 1fr !important;
+    gap: 18px !important;
+    padding: 0 4vw 24px 4vw !important;
+  }
+  .service, .pricing-card, .about-block, .portfolio-item, .testimonial, .blog-post {
+    min-width: unset !important;
+    max-width: 98vw !important;
+    padding: 14px 4vw 14px 4vw !important;
+    margin: 0 auto 18px auto !important;
+    border-radius: 16px !important;
+  }
+  .icon-gold {
+    width: 32px !important;
+    height: 32px !important;
+    margin-bottom: 6px !important;
+  }
+  .about-team-img {
+    max-width: 90vw !important;
+    border-radius: 12px !important;
+  }
+  .portfolio-item img, .testimonial img, .blog-post img {
+    max-width: 90vw !important;
+    height: auto !important;
+    border-radius: 10px !important;
+  }
+  .footer-links, .footer-social {
+    flex-direction: column !important;
+    gap: 8px !important;
+    font-size: 0.98rem !important;
+  }
+  .footer-links a, .footer-social a {
+    display: inline-block;
+    margin: 2px 0 !important;
+    padding: 4px 8px !important;
+    font-size: 1rem !important;
+  }
+  .copyright {
+    font-size: 0.95rem !important;
+    padding: 8px 0 !important;
+  }
+  header {
+    flex-direction: row-reverse;
+    padding: 10px 10px;
+  }
+  .main-nav {
+    display: none !important;
+  }
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1002;
+    margin-left: 10px;
+  }
+  .hamburger span {
+    display: block;
+    width: 28px;
+    height: 3px;
+    background: #FFD700;
+    margin: 4px 0;
+    border-radius: 2px;
+    transition: 0.3s;
+  }
+  .hamburger.active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+  .mobile-nav {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 80vw;
+    max-width: 320px;
+    height: 100vh;
+    background: #181818ee;
+    box-shadow: -2px 0 24px #0008;
+    padding: 80px 24px 24px 24px;
+    z-index: 1001;
+    transform: translateX(100%);
+    transition: transform 0.3s cubic-bezier(.77,0,.18,1);
+    gap: 18px;
+    align-items: flex-start;
+  }
+  .mobile-nav.active {
+    transform: translateX(0);
+  }
+  .mobile-nav a {
+    color: #FFD700;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-decoration: none;
+    margin-bottom: 8px;
+    padding: 8px 0;
+    border-bottom: 1px solid #FFD70022;
+    width: 100%;
+    text-align: right;
+  }
+  .mobile-nav a.cta-btn {
+    background: #FFD700;
+    color: #111 !important;
+    border-radius: 22px;
+    margin-top: 18px;
+    text-align: center;
+    width: 100%;
+    display: block;
+    font-size: 1.1rem;
+    box-shadow: 0 0 10px #FFD70033;
+  }
+  /* Sidebar Styling on Mobile */
+@media (max-width: 768px) {
+  .main-sidebar {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 250px;
+    height: 100vh;
+    background-color: #fff;
+    z-index: 10000;
+    transition: left 0.3s ease-in-out;
+    overflow-y: auto;
+  }
+
+  .main-sidebar.active {
+    left: 0;
+  }
+
+  .sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 9999;
+    display: none;
+  }
+
+  .sidebar-overlay.active {
+    display: block;
+  }
+
+  .sidebar-toggle {
+    z-index: 10001;
+    position: relative;
+  }
+}
+  .logo {
+    font-size: 1.3rem !important;
+    margin-bottom: 8px !important;
+  }
+  nav {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px;
+  }
+  nav a {
+    margin: 0 2px !important;
+    font-size: 0.98rem !important;
+    padding: 6px 10px !important;
+    border-radius: 18px !important;
+  }
+  .hero {
+    padding: 40px 4vw 30px 4vw !important;
+  }
+  .hero h1 {
+    font-size: 1.1rem !important;
+    margin-bottom: 12px !important;
+  }
+  .hero p {
+    font-size: 1rem !important;
+    margin-bottom: 18px !important;
+  }
+  .hero .cta-btn {
+    font-size: 1rem !important;
+    padding: 10px 18px !important;
+  }
+  .cta-btn, .portfolio-btn, .blog-post .cta-btn {
+    font-size: 1rem !important;
+    padding: 10px 18px !important;
+    min-width: 120px;
+    margin: 8px auto 0 auto !important;
+    display: block !important;
+  }
+  .contact-form, .contact-info {
+    min-width: unset !important;
+    max-width: 98vw !important;
+    padding: 12px 4vw !important;
+    border-radius: 14px !important;
+  }
+  .contact-form label {
+    font-size: 1rem !important;
+    margin-bottom: 2px !important;
+  }
+  .contact-form input, .contact-form textarea {
+    font-size: 0.98rem !important;
+    padding: 8px !important;
+    border-radius: 8px !important;
+  }
+  .contact-form button {
+    font-size: 1rem !important;
+    padding: 10px 18px !important;
+    border-radius: 18px !important;
+  }
+  .contact-section {
+    flex-direction: column !important;
+    gap: 18px !important;
+    align-items: stretch !important;
+  }
+  .about-numbers > div {
+    gap: 12px !important;
+  }
+}
+@media (max-width: 600px) {
+  header {
+    flex-direction: row-reverse;
+    padding: 14px 10px;
+  }
+  .logo {
+    font-size: 1.3rem;
+    margin-left: 10px;
+    margin-right: 0;
+  }
+  .main-nav {
+    margin-left: auto;
+  }
+  nav a {
+    font-size: 0.93rem !important;
+    padding: 6px 8px !important;
+  }
+  .logo {
+    font-size: 1.1rem !important;
+  }
+  .hero h1 {
+    font-size: 0.98rem !important;
+  }
+  .service h3, .pricing-card h3, .about-block h2, .portfolio-info h3, .testimonial h3, .blog-post h3 {
+    font-size: 0.98rem !important;
+  }
+  .cta-btn, .portfolio-btn, .blog-post .cta-btn {
+    font-size: 0.95rem !important;
+    padding: 8px 12px !important;
+    min-width: 100px;
+  }
+  .footer-links, .footer-social {
+    font-size: 0.93rem !important;
+  }
+  .copyright {
+    font-size: 0.9rem !important;
+  }
+}
+
+/* كيرسور مخصص ذهبي دائري */
+body, * {
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"><circle cx="16" cy="16" r="10" fill="%23FFD700" stroke="%23fff700" stroke-width="2"/><circle cx="16" cy="16" r="6" fill="%23fff" fill-opacity="0.2"/></svg>') 16 16, pointer !important;
+}
+
+/* خدماتنا بشكل أفقي عصري */
+.services-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  justify-content: center;
+  align-items: stretch;
+  margin-top: -30px;
+}
+@media (max-width: 900px) {
+  .services-row {
+    gap: 20px;
+  }
+}
+@media (max-width: 600px) {
+  .services-row {
+    flex-direction: column;
+    gap: 14px;
+    align-items: center;
+  }
+}
+
+/* ====== Hamburger Menu Styles ====== */
+.hamburger {
+  display: none;
+}
+.mobile-nav {
+  display: none;
+}
+@media (max-width: 900px) {
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1102;
+    margin-left: 10px;
+  }
+  .hamburger span {
+    display: block;
+    width: 28px;
+    height: 3px;
+    background: #FFD700;
+    margin: 4px 0;
+    border-radius: 2px;
+    transition: 0.3s;
+  }
+  .hamburger.active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+  .mobile-nav {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: auto;
+    width: 80vw;
+    max-width: 340px;
+    height: 100vh;
+    background: #181818f9;
+    box-shadow: -2px 0 24px #0008;
+    padding: 80px 24px 24px 24px;
+    z-index: 1103;
+    transform: translateX(100%);
+    transition: transform 0.3s cubic-bezier(.77,0,.18,1);
+    gap: 22px;
+    align-items: flex-start;
+    border-radius: 0 0 0 24px;
+  }
+  .mobile-nav.active {
+    transform: translateX(0);
+  }
+  .mobile-nav a {
+    color: #FFD700;
+    font-size: 1.25rem;
+    font-weight: bold;
+    text-decoration: none;
+    margin-bottom: 10px;
+    padding: 10px 0 10px 0;
+    border-bottom: 1px solid #FFD70022;
+    width: 100%;
+    text-align: right;
+    letter-spacing: 0.5px;
+    transition: background 0.2s, color 0.2s;
+    display: block;
+    pointer-events: auto;
+  }
+  .mobile-nav a.cta-btn {
+    background: #FFD700;
+    color: #111 !important;
+    border-radius: 22px;
+    margin-top: 18px;
+    text-align: center;
+    width: 100%;
+    display: block;
+    font-size: 1.1rem;
+    box-shadow: 0 0 10px #FFD70033;
+    border: none;
+  }
+  .mobile-nav a:hover {
+    background: #FFD70022;
+    color: #fff;
+  }
+  .mobile-nav-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: #0006;
+    z-index: 1100;
+    transition: opacity 0.3s;
+  }
+  .mobile-nav.active + .mobile-nav-overlay {
+    display: block;
+    opacity: 1;
+  }
+}
+@media (max-width: 900px) {
+  .mobile-nav {
+    z-index: 2147483647 !important;
+    background: #181818 !important;
+  }
+  .mobile-nav-overlay {
+    z-index: 2147483646 !important;
+    background: #0008 !important;
+    position: fixed !important;
+    top: 0; right: 0; left: 0; bottom: 0;
+    width: 100vw; height: 100vh;
+    display: none;
+    pointer-events: auto;
+  }
+  .mobile-nav.active + .mobile-nav-overlay {
+    display: block;
+  }
+
+}
+/* تحسينات القائمة الجانبية للجوال */
+.mobile-nav {
+  right: -100%;
+  left: auto;
+  width: 85%;
+  max-width: 320px;
+  direction: rtl;
+  padding: 80px 25px 30px;
+}
+
+.mobile-nav a {
+  font-size: 1.2rem;
+  padding: 15px 0;
+  text-align: right;
+}
+
+/* تحسينات الهيدر للجوال */
+@media (max-width: 768px) {
+  header {
+    padding: 15px 20px;
+  }
+  
+  .logo {
+    font-size: 1.5rem;
+  }
+}
+
+/* تحسينات الأقسام للجوال */
+@media (max-width: 600px) {
+  .service, .pricing-card, .testimonial {
+    width: 100%;
+    max-width: 100%;
+    padding: 25px 15px;
+  }
+  
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+  
+  .hero p {
+    font-size: 1.1rem;
+  }
+}
+
+/* تحسينات عامة للزر الرئيسي */
+.cta-btn {
+  padding: 12px 30px;
+  font-size: 1.1rem;
+  min-width: 180px;
+}
+.hero-image {
+  width: 320px;
+  max-width: 45vw;
+  min-width: 140px;
+  border-radius: 50%; /* أو 20px إذا كان الشعار ليس دائريًا */
+  background: none;
+  box-shadow: 0 6px 32px rgba(0,0,0,0.18), 0 0 0 4px rgba(255,215,0,0.08);
+  object-fit: cover;
+  margin: 0 0 0 40px;
+  transition: width 0.3s, border-radius 0.3s;
+  display: block;
+}
+@media (max-width: 992px) {
+  .hero-image {
+    width: 200px;
+    max-width: 60vw;
+    margin: 30px auto 0 auto;
+    display: block;
+  }
+  .hero .container {
+    flex-direction: column-reverse !important;
+    align-items: center !important;
+  }
+}
+@media (max-width: 576px) {
+  .hero-image {
+    width: 140px;
+    max-width: 80vw;
+    margin: 24px auto 0 auto;
+  }
+}

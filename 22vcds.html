@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <title>تجربة قائمة جانبية موبايل</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body { font-family: Arial; }
+    .mobile-nav { display: none; position: fixed; right: 0; top: 0; background: #222; width: 250px; height: 100vh; z-index: 1000; }
+    .mobile-nav.active { display: block; }
+    .mobile-nav a { color: #FFD700; display: block; padding: 15px; text-decoration: none;}
+    .mobile-nav-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 999;}
+    .mobile-nav-overlay.active { display: block;}
+    .hamburger { position: fixed; top: 20px; right: 20px; background: #FFD700; border: none; padding: 10px; cursor: pointer; z-index: 1100;}
+    .section { margin-top: 100px;}
+  </style>
+</head>
+<body>
+  <button class="hamburger" id="hamburger-menu">☰</button>
+  <div class="mobile-nav-overlay" id="mobile-nav-overlay"></div>
+  <nav class="mobile-nav" id="mobile-nav">
+    <a href="index.html">الرئيسية</a>
+    <a href="about.html">عننا</a>
+    <a href="#section1">سيكشن داخلي 1</a>
+    <a href="#section2">سيكشن داخلي 2</a>
+  </nav>
+  <div class="section" id="section1" style="background:#eee; padding:50px;">سيكشن داخلي 1</div>
+  <div class="section" id="section2" style="background:#ddd; padding:50px;">سيكشن داخلي 2</div>
+  <script>
+    // Mobile menu functionality
+    const hamburger = document.getElementById('hamburger-menu');
+    const mobileNav = document.getElementById('mobile-nav');
+    const overlay = document.getElementById('mobile-nav-overlay');
+
+    // Toggle mobile menu
+    hamburger.addEventListener('click', function() {
+      const isExpanded = this.getAttribute('aria-expanded') === 'true';
+      this.setAttribute('aria-expanded', !isExpanded);
+      mobileNav.classList.toggle('active');
+      overlay.classList.toggle('active');
+      document.body.style.overflow = isExpanded ? 'auto' : 'hidden';
+    });
+
+    // Close menu when clicking overlay
+    overlay.addEventListener('click', function() {
+      hamburger.setAttribute('aria-expanded', 'false');
+      mobileNav.classList.remove('active');
+      this.classList.remove('active');
+      document.body.style.overflow = 'auto';
+    });
+
+    // Close menu when clicking a link
+    document.querySelectorAll('.mobile-nav a').forEach(link => {
+      link.addEventListener('click', function(e) {
+        // أغلق القائمة دائمًا
+        hamburger.setAttribute('aria-expanded', 'false');
+        mobileNav.classList.remove('active');
+        overlay.classList.remove('active');
+        document.body.style.overflow = 'auto';
+        const href = this.getAttribute('href');
+        // لو الرابط داخلي (#), امنع التحميل واعمل سكرول
+        if (href && href.startsWith('#')) {
+          e.preventDefault();
+          if (href === '#') return;
+          const targetElement = document.querySelector(href);
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 80,
+              behavior: 'smooth'
+            });
+          }
+        }
+        // روابط الصفحات ستعمل بشكل طبيعي
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>مدونة Mediava</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <style>
+    .blog-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 38px;
+      justify-content: center;
+      margin-top: 50px;
+      margin-bottom: 40px;
+    }
+    .blog-post {
+      background: #222;
+      border-radius: 20px;
+      box-shadow: 0 2px 16px #FFD70022;
+      padding: 32px 20px 26px 20px;
+      text-align: center;
+      min-width: 260px;
+      max-width: 340px;
+      transition: transform 0.22s, box-shadow 0.22s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .blog-post:hover {
+      transform: translateY(-10px) scale(1.045);
+      box-shadow: 0 8px 32px #FFD70044;
+    }
+    .blog-post h3 {
+      color: #FFD700;
+      margin-bottom: 12px;
+      font-size: 1.25rem;
+      font-weight: bold;
+    }
+    .blog-post p {
+      color: #fff;
+      font-size: 1.08rem;
+      margin-bottom: 18px;
+      min-height: 48px;
+    }
+    .blog-post .cta-btn {
+      margin-top: auto;
+      display: inline-block;
+      background: #FFD700;
+      color: #111;
+      padding: 10px 28px;
+      border-radius: 25px;
+      font-weight: bold;
+      font-size: 1.08rem;
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+      box-shadow: 0 0 12px #FFD70033;
+      border: none;
+    }
+    .blog-post .cta-btn:hover {
+      background: #fff;
+      color: #FFD700;
+      box-shadow: 0 0 18px #FFD70055;
+    }
+    .blog-hero-container {
+      max-width: 700px;
+      margin: 0 auto 38px auto;
+      text-align: center;
+      padding: 44px 18px 30px 18px;
+      background: linear-gradient(120deg, #181818 80%, #FFD70011 100%);
+      border-radius: 22px;
+      box-shadow: 0 4px 32px #FFD70011;
+    }
+    .blog-hero-title {
+      color: #FFD700;
+      font-size: 2.3rem;
+      margin-bottom: 8px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+    .blog-hero-divider {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 22px;
+      margin-top: 0;
+    }
+    .blog-hero-divider hr {
+      width: 60px;
+      border: 2px solid #FFD700;
+      border-radius: 2px;
+      opacity: 0.8;
+      margin: 0;
+    }
+    .blog-hero-summary {
+      color: #FFD700;
+      font-size: 1.15rem;
+      margin-bottom: 0;
+    }
+    .blog-list-bg {
+      background: linear-gradient(120deg, #181818 80%, #FFD70009 100%);
+      border-radius: 24px;
+      box-shadow: 0 4px 32px #FFD70011;
+      padding: 36px 0 36px 0;
+      margin: 0 auto 0 auto;
+      max-width: 1400px;
+    }
+    @media (max-width: 900px) {
+      .blog-list {flex-direction: column;align-items: center;gap: 24px;}
+      .blog-post {max-width: 95vw;min-width: 0;}
+    }
+    .mobile-nav {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 80vw;
+      max-width: 340px;
+      height: 100vh;
+      background: #181818;
+      box-shadow: -2px 0 24px #FFD70022;
+      z-index: 1002;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 48px 24px 24px 24px;
+      transform: translateX(100%);
+      transition: transform 0.3s cubic-bezier(.77,0,.18,1);
+      overflow-y: auto;
+      gap: 18px;
+      visibility: hidden;
+      pointer-events: none;
+    }
+    .mobile-nav.active {
+      transform: translateX(0);
+      visibility: visible;
+      pointer-events: auto;
+    }
+    .mobile-nav a {
+      color: #FFD700;
+      font-size: 1.2rem;
+      margin-bottom: 12px;
+      text-decoration: none;
+      font-weight: bold;
+      display: block;
+      width: 100%;
+      padding: 10px 0;
+      border-bottom: 1px solid #FFD70022;
+    }
+    .mobile-nav a.cta-btn {
+      background: #FFD700;
+      color: #181818;
+      border-radius: 8px;
+      margin-top: 18px;
+      text-align: center;
+      border: none;
+      font-size: 1.1rem;
+      font-weight: bold;
+      box-shadow: 0 2px 8px #FFD70033;
+      padding: 12px 0;
+    }
+    .mobile-nav-overlay {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(24,24,24,0.65);
+      z-index: 1001;
+      display: none;
+      transition: opacity 0.3s;
+    }
+    @media (min-width: 901px) {
+      .mobile-nav, .mobile-nav-overlay, .hamburger {display: none !important;}
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="logo">Mediava</div>
+  <button class="hamburger" id="hamburger-menu" aria-label="القائمة" aria-expanded="false" aria-controls="mobile-nav">
+    <span></span><span></span><span></span>
+  </button>
+  <nav class="main-nav">
+    <a href="index.html">الرئيسية</a>
+    <a href="about.html">عننا</a>
+    <a href="portfolio.html">أعمالنا</a>
+    <a href="testimonials.html">آراء العملاء</a>
+    <a href="blog.html">مدونة</a>
+    <a href="contact.html" class="cta-btn">احجز استشارة</a>
+  </nav>
+  <div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+    <a href="index.html">الرئيسية</a>
+    <a href="about.html">عننا</a>
+    <a href="services.html">خدماتنا</a>
+    <a href="portfolio.html">أعمالنا</a>
+    <a href="testimonials.html">آراء العملاء</a>
+    <a href="blog.html">مدونة</a>
+    <a href="contact.html" class="cta-btn">احجز استشارة</a>
+  </div>
+  <div class="mobile-nav-overlay" id="mobile-nav-overlay"></div>
+</header>
+<main class="blog-page">
+  <section class="blog-hero" data-aos="fade-up">
+    <div class="blog-hero-container">
+      <h1 class="blog-hero-title">مدونة Mediava</h1>
+      <div class="blog-hero-divider"><hr></div>
+      <div class="blog-hero-summary">هنا هتلاقي نصايح وأفكار تسويق وبرمجة تساعدك تكبر شغلك وتحقق نتايج أونلاين.</div>
+    </div>
+  </section>
+  <div class="blog-list-bg" data-aos="fade-up" data-aos-delay="200">
+    <section class="blog-list">
+      <article class="blog-post" data-aos="zoom-in">
+        <span class="icon-gold">
+          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="24" cy="24" r="22" stroke="#FFD700" stroke-width="3" fill="#232323"/>
+            <rect x="14" y="18" width="20" height="12" rx="3" fill="#FFD700"/>
+            <rect x="18" y="22" width="12" height="4" rx="2" fill="#232323"/>
+          </svg>
+        </span>
+        <h3>5 أسرار لنجاح التسويق الرقمي في مصر</h3>
+        <p>تعرف على أهم الأسرار اللي بتخلي حملتك الرقمية تحقق نتائج قوية وتكسب عملاء جداد في السوق المصري.</p>
+        <a href="blog-1.html" class="cta-btn">اقرأ المزيد</a>
+      </article>
+      <article class="blog-post" data-aos="zoom-in" data-aos-delay="100">
+        <span class="icon-gold">
+          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="24" cy="24" r="22" stroke="#FFD700" stroke-width="3" fill="#232323"/>
+            <polyline points="14,32 24,18 34,32" stroke="#FFD700" stroke-width="3" fill="none"/>
+            <circle cx="24" cy="18" r="3" fill="#FFD700"/>
+          </svg>
+        </span>
+        <h3>ليه لازم يكون عندك موقع إلكتروني احترافي؟</h3>
+        <p>الموقع هو واجهتك قدام عملاءك. اعرف إزاي موقع احترافي يفرق في مبيعاتك وثقة العملاء فيك.</p>
+        <a href="blog-2.html" class="cta-btn">اقرأ المزيد</a>
+      </article>
+      <article class="blog-post" data-aos="zoom-in" data-aos-delay="200">
+        <span class="icon-gold">
+          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="24" cy="24" r="22" stroke="#FFD700" stroke-width="3" fill="#232323"/>
+            <ellipse cx="24" cy="24" rx="8" ry="12" fill="#FFD700"/>
+            <ellipse cx="24" cy="24" rx="4" ry="6" fill="#232323"/>
+          </svg>
+        </span>
+        <h3>كيف تجهز علامتك التجارية للسوشيال ميديا؟</h3>
+        <p>خطوات عملية لبناء براند قوي وجذاب على منصات التواصل الاجتماعي، من أول التصميم لحد المحتوى.</p>
+        <a href="blog-3.html" class="cta-btn">اقرأ المزيد</a>
+      </article>
+    </section>
+  </div>
+</main>
+<footer>
+  <div class="footer-links">
+    <a href="index.html">الرئيسية</a> |
+    <a href="about.html">عننا</a> |
+    <a href="portfolio.html">أعمالنا</a> |
+    <a href="testimonials.html">آراء العملاء</a> |
+    <a href="blog.html">مدونة</a> |
+    <a href="contact.html">تواصل معانا</a>
+  </div>
+  <div class="footer-social">
+    <a href="https://www.facebook.com/Mediavamarketing" target="_blank"><span>فيسبوك</span></a>
+    <a href="https://www.instagram.com/navomarketingagancy" target="_blank"><span>إنستجرام</span></a>
+    <a href="https://www.linkedin.com/in/mediava-marketing-agancey-331761359/" target="_blank"><span>لينكدإن</span></a>
+  </div>
+  <div class="copyright">
+    © 2025 Mediava - Marketing Agency. كل الحقوق محفوظة.
+  </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({duration:1000,once:true});
+  // Hamburger menu toggle
+  const hamburger = document.getElementById('hamburger-menu');
+  const mobileNav = document.getElementById('mobile-nav');
+  const mobileNavOverlay = document.getElementById('mobile-nav-overlay');
+  hamburger.addEventListener('click', function() {
+    const expanded = hamburger.getAttribute('aria-expanded') === 'true';
+    hamburger.setAttribute('aria-expanded', !expanded);
+    mobileNav.setAttribute('aria-hidden', expanded);
+    hamburger.classList.toggle('active');
+    mobileNav.classList.toggle('active');
+    mobileNavOverlay.style.display = mobileNav.classList.contains('active') ? 'block' : 'none';
+    document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+  });
+  mobileNavOverlay.addEventListener('click', function() {
+    hamburger.setAttribute('aria-expanded', false);
+    mobileNav.setAttribute('aria-hidden', true);
+    hamburger.classList.remove('active');
+    mobileNav.classList.remove('active');
+    mobileNavOverlay.style.display = 'none';
+    document.body.style.overflow = '';
+  });
+</script>
+</body>
+</html> 

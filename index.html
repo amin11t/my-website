@@ -1,0 +1,1375 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="description" content="Mediava - وكالة تسويق رقمي متكاملة تقدم حلول إبداعية لتعزيز وجودك الرقمي وزيادة مبيعاتك">
+  <meta name="keywords" content="تسويق رقمي, إدارة سوشيال ميديا, تصميم مواقع, حملات إعلانية, SEO, تسويق بالبريد الإلكتروني">
+  <title>Mediava - وكالة التسويق الرقمي المتكاملة</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #FFD700;
+      --primary-dark: #D4AF37;
+      --dark-bg: #181818;
+      --darker-bg: #111;
+      --card-bg: #232323;
+      --text: #fff;
+      --text-light: rgba(255,255,255,0.8);
+      --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      --box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      --box-shadow-hover: 0 10px 25px rgba(255, 215, 0, 0.3);
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Cairo', sans-serif;
+      background: var(--darker-bg);
+      color: var(--text);
+      line-height: 1.7;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+      font-weight: 700;
+      line-height: 1.3;
+      margin-bottom: 1rem;
+    }
+    
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: var(--transition);
+    }
+    
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+    
+    .container {
+      width: 100%;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    .section {
+      padding: 80px 0;
+      position: relative;
+    }
+    
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+      position: relative;
+    }
+    
+    .section-title h2 {
+      color: var(--primary);
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+    }
+    
+    .section-title .divider {
+      width: 80px;
+      height: 4px;
+      background: var(--primary);
+      margin: 0 auto;
+      border-radius: 2px;
+      position: relative;
+    }
+    
+    .section-title .divider::after {
+      content: '';
+      position: absolute;
+      width: 30px;
+      height: 4px;
+      background: var(--text-light);
+      right: -40px;
+      top: 0;
+    }
+    
+    .btn {
+      display: inline-block;
+      background: var(--primary);
+      color: var(--darker-bg);
+      padding: 12px 30px;
+      border-radius: 30px;
+      font-weight: 700;
+      text-align: center;
+      transition: var(--transition);
+      box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+      border: none;
+      cursor: pointer;
+      font-size: 1.1rem;
+    }
+    
+    .btn:hover {
+      background: #fff;
+      color: var(--primary-dark);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(255, 215, 0, 0.4);
+    }
+    
+    .btn-outline {
+      background: transparent;
+      color: var(--primary);
+      border: 2px solid var(--primary);
+      box-shadow: none;
+    }
+    
+    .btn-outline:hover {
+      background: var(--primary);
+      color: var(--darker-bg);
+    }
+    
+    /* Header Styles - النسخة القديمة */
+    header {
+      background: var(--darker-bg);
+      padding: 15px 20px;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      box-shadow: 0 2px 15px rgba(0,0,0,0.3);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo {
+      color: var(--primary);
+      font-size: 1.8rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+    
+    /* Main Navigation - النسخة القديمة */
+    .main-nav {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    
+    .main-nav a {
+      color: var(--text);
+      text-decoration: none;
+      font-size: 1.1rem;
+      transition: color 0.2s;
+      padding: 8px 12px;
+    }
+    
+    .main-nav a.cta-btn {
+      background: var(--primary);
+      color: var(--darker-bg);
+      padding: 10px 20px;
+      border-radius: 25px;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+    
+    .main-nav a:hover, .main-nav a.cta-btn:hover {
+      color: var(--primary);
+      box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+    }
+    
+    /* Mobile Navigation - النسخة القديمة */
+    .mobile-nav-container {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 999;
+      pointer-events: none;
+    }
+    
+    .mobile-nav-overlay {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.8);
+      backdrop-filter: blur(5px);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    
+    .mobile-nav {
+      position: absolute;
+      top: 0;
+      right: -100%;
+      width: 85%;
+      max-width: 320px;
+      height: 100%;
+      background: var(--dark-bg);
+      box-shadow: -5px 0 25px rgba(0,0,0,0.4);
+      padding: 80px 25px 30px;
+      transition: right 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      overflow-y: auto;
+    }
+    
+    .mobile-nav.active {
+      right: 0;
+    }
+    
+    .mobile-nav-overlay.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    
+    .mobile-nav a {
+      display: block;
+      color: var(--primary);
+      font-size: 1.2rem;
+      font-weight: 600;
+      padding: 15px 20px;
+      margin: 10px 0;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      background: rgba(255,215,0,0.1);
+      border-right: 3px solid transparent;
+    }
+    
+    .mobile-nav a:hover {
+      background: rgba(255,215,0,0.2);
+      border-right: 3px solid var(--primary);
+      transform: translateX(-10px);
+    }
+    
+    .mobile-nav a.cta-btn {
+      background: var(--primary);
+      color: var(--darker-bg) !important;
+      font-weight: 700;
+      margin-top: 25px;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(255,215,0,0.3);
+    }
+    
+    .mobile-nav a.cta-btn:hover {
+      background: #fff;
+      transform: scale(1.05);
+      border-right: 3px solid transparent;
+    }
+    
+    /* Hamburger Menu - النسخة القديمة */
+    .hamburger {
+      width: 50px;
+      height: 50px;
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: rgba(255,215,0,0.1);
+      border-radius: 50%;
+      border: none;
+      cursor: pointer;
+      z-index: 1001;
+      padding: 12px;
+      transition: all 0.3s ease;
+    }
+    
+    .hamburger:hover {
+      background: rgba(255,215,0,0.2);
+    }
+    
+    .hamburger span {
+      display: block;
+      width: 25px;
+      height: 3px;
+      background: var(--primary);
+      margin: 4px 0;
+      transition: all 0.3s ease;
+      border-radius: 2px;
+      transform-origin: center;
+    }
+    
+    .hamburger.active span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+    
+    .hamburger.active span:nth-child(2) {
+      opacity: 0;
+      transform: scaleX(0);
+    }
+    
+    .hamburger.active span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+    
+    /* Hero Section */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(135deg, var(--darker-bg) 0%, rgba(24, 24, 24, 0.9) 100%), 
+                  url('images/hero-bg.jpg') no-repeat center center/cover;
+      padding: 120px 0 80px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at 70% 50%, rgba(255, 215, 0, 0.1) 0%, transparent 50%);
+    }
+    
+    .hero-content {
+      max-width: 600px;
+      margin-right: auto;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .hero h1 {
+      color: var(--primary);
+      font-size: 3rem;
+      margin-bottom: 20px;
+      line-height: 1.2;
+    }
+    
+    .hero p {
+      color: var(--text-light);
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+    }
+    
+    .hero-btns {
+      display: flex;
+      gap: 15px;
+      margin-top: 30px;
+    }
+    
+    .hero-image {
+      position: absolute;
+      left: 10%;
+      bottom: 0;
+      width: 50%;
+      max-width: 700px;
+      z-index: 0;
+      animation: float 6s ease-in-out infinite;
+    }
+    
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-20px); }
+      100% { transform: translateY(0px); }
+    }
+    
+    /* Services Section */
+    .services {
+      background: var(--dark-bg);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .services::before {
+      content: '';
+      position: absolute;
+      top: -100px;
+      right: -100px;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(255, 215, 0, 0.1) 0%, transparent 70%);
+      z-index: 0;
+    }
+    
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 50px;
+    }
+    
+    .service-card {
+      background: var(--card-bg);
+      border-radius: 18px;
+      padding: 30px;
+      transition: var(--transition);
+      box-shadow: var(--box-shadow);
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+      border: 1px solid rgba(255, 215, 0, 0.1);
+    }
+    
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 5px;
+      background: var(--primary);
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.3s ease;
+    }
+    
+    .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: var(--box-shadow-hover);
+    }
+    
+    .service-card:hover::before {
+      transform: scaleX(1);
+    }
+    
+    .service-icon {
+      width: 70px;
+      height: 70px;
+      background: rgba(255, 215, 0, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      font-size: 1.8rem;
+      color: var(--primary);
+    }
+    
+    .service-card h3 {
+      color: var(--primary);
+      font-size: 1.4rem;
+      margin-bottom: 15px;
+    }
+    
+    .service-card p {
+      color: var(--text-light);
+      margin-bottom: 20px;
+    }
+    
+    .service-link {
+      color: var(--primary);
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+    }
+    
+    .service-link i {
+      margin-right: 5px;
+      transition: var(--transition);
+    }
+    
+    .service-link:hover i {
+      transform: translateX(5px);
+    }
+    
+    /* Pricing Section */
+    .pricing {
+      background: linear-gradient(135deg, var(--dark-bg) 0%, var(--darker-bg) 100%);
+      position: relative;
+    }
+    
+    .pricing::after {
+      content: '';
+      position: absolute;
+      bottom: -100px;
+      left: -100px;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(255, 215, 0, 0.1) 0%, transparent 70%);
+      z-index: 0;
+    }
+    
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 30px;
+      margin-top: 50px;
+    }
+    
+    .pricing-card {
+      background: var(--card-bg);
+      border-radius: 18px;
+      padding: 40px 30px;
+      transition: var(--transition);
+      box-shadow: var(--box-shadow);
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+      border: 1px solid rgba(255, 215, 0, 0.1);
+      text-align: center;
+    }
+    
+    .pricing-card.popular {
+      border: 2px solid var(--primary);
+      transform: scale(1.05);
+    }
+    
+    .pricing-card.popular::after {
+      content: 'الأكثر طلباً';
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background: var(--primary);
+      color: var(--darker-bg);
+      padding: 5px 15px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+    
+    .pricing-card:hover {
+      transform: translateY(-10px);
+      box-shadow: var(--box-shadow-hover);
+    }
+    
+    .pricing-card.popular:hover {
+      transform: translateY(-10px) scale(1.05);
+    }
+    
+    .pricing-card h3 {
+      color: var(--primary);
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+    }
+    
+    .price {
+      font-size: 2.5rem;
+      color: var(--primary);
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+    
+    .price span {
+      font-size: 1rem;
+      color: var(--text-light);
+    }
+    
+    .pricing-features {
+      list-style: none;
+      margin-bottom: 30px;
+      text-align: right;
+    }
+    
+    .pricing-features li {
+      padding: 10px 0;
+      color: var(--text-light);
+      position: relative;
+      padding-right: 30px;
+    }
+    
+    .pricing-features li::before {
+      content: '\f00c';
+      font-family: 'Font Awesome 6 Free';
+      font-weight: 900;
+      position: absolute;
+      right: 0;
+      color: var(--primary);
+    }
+    
+    .pricing-features li.disabled {
+      color: rgba(255,255,255,0.3);
+    }
+    
+    .pricing-features li.disabled::before {
+      content: '\f00d';
+      color: rgba(255,255,255,0.3);
+    }
+    
+    /* Testimonials Section */
+    .testimonials {
+      background: var(--darker-bg);
+      position: relative;
+    }
+    
+    .testimonials::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 80%;
+      height: 80%;
+      background: radial-gradient(circle, rgba(255, 215, 0, 0.05) 0%, transparent 70%);
+      z-index: 0;
+    }
+    
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 30px;
+      margin-top: 50px;
+    }
+    
+    .testimonial-card {
+      background: var(--card-bg);
+      border-radius: 18px;
+      padding: 30px;
+      transition: var(--transition);
+      box-shadow: var(--box-shadow);
+      position: relative;
+      z-index: 1;
+      border: 1px solid rgba(255, 215, 0, 0.1);
+    }
+    
+    .testimonial-card:hover {
+      transform: translateY(-10px);
+      box-shadow: var(--box-shadow-hover);
+    }
+    
+    .testimonial-text {
+      color: var(--text-light);
+      font-style: italic;
+      margin-bottom: 20px;
+      position: relative;
+    }
+    
+    .testimonial-text::before,
+    .testimonial-text::after {
+      content: '"';
+      color: var(--primary);
+      font-size: 2rem;
+      line-height: 0;
+      position: absolute;
+    }
+    
+    .testimonial-text::before {
+      top: 0;
+      right: -15px;
+    }
+    
+    .testimonial-text::after {
+      bottom: -20px;
+      left: -15px;
+    }
+    
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      margin-top: 20px;
+    }
+    
+    .author-avatar {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin-left: 15px;
+      border: 2px solid var(--primary);
+    }
+    
+    .author-info h4 {
+      color: var(--primary);
+      margin-bottom: 5px;
+    }
+    
+    .author-info p {
+      color: var(--text-light);
+      font-size: 0.9rem;
+    }
+    
+    /* Why Us Section */
+    .why-us {
+      background: linear-gradient(135deg, var(--dark-bg) 0%, rgba(24, 24, 24, 0.9) 100%);
+      text-align: center;
+    }
+    
+    .why-us-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-top: 50px;
+    }
+    
+    .why-us-card {
+      padding: 30px;
+      transition: var(--transition);
+    }
+    
+    .why-us-icon {
+      width: 80px;
+      height: 80px;
+      background: rgba(255, 215, 0, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      font-size: 2rem;
+      color: var(--primary);
+    }
+    
+    .why-us-card h3 {
+      color: var(--primary);
+      font-size: 1.4rem;
+      margin-bottom: 15px;
+    }
+    
+    .why-us-card p {
+      color: var(--text-light);
+    }
+    
+    /* CTA Section */
+    .cta {
+      background: linear-gradient(135deg, rgba(255, 215, 0, 0.1) 0%, var(--darker-bg) 100%);
+      text-align: center;
+      padding: 100px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .cta::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      background: url('images/cta-pattern.png') repeat;
+      opacity: 0.1;
+      z-index: 0;
+    }
+    
+    .cta-content {
+      max-width: 700px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .cta h2 {
+      color: var(--primary);
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+    
+    .cta p {
+      color: var(--text-light);
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+    }
+    
+    /* Footer - النسخة القديمة */
+    footer {
+      background: var(--dark-bg);
+      padding: 40px 20px;
+      text-align: center;
+      border-top: 1px solid rgba(255,215,0,0.1);
+    }
+    
+    .footer-links {
+      margin-bottom: 25px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+    }
+    
+    .footer-links a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+      padding: 5px 10px;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+    
+    .footer-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 0;
+      height: 2px;
+      background: var(--primary);
+      transition: width 0.3s ease;
+    }
+    
+    .footer-links a:hover::after {
+      width: 100%;
+    }
+    
+    .footer-social {
+      margin-bottom: 25px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+    
+    .footer-social a {
+      color: var(--text);
+      font-size: 1.5rem;
+      transition: all 0.3s ease;
+    }
+    
+    .footer-social a:hover {
+      color: var(--primary);
+      transform: translateY(-5px);
+    }
+    
+    .copyright {
+      color: rgba(255,255,255,0.6);
+      font-size: 0.9rem;
+    }
+    
+    /* Back to Top Button */
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      left: 30px;
+      width: 50px;
+      height: 50px;
+      background: var(--primary);
+      color: var(--darker-bg);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      z-index: 99;
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition);
+      box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+    }
+    
+    .back-to-top.active {
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    .back-to-top:hover {
+      background: #fff;
+      transform: translateY(-5px);
+    }
+    
+    /* Responsive Styles */
+    @media (max-width: 1200px) {
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+      
+      .hero-image {
+        width: 45%;
+      }
+    }
+    
+    @media (max-width: 992px) {
+      .main-nav {
+        display: none;
+      }
+      
+      .hamburger {
+        display: flex;
+      }
+      
+      .hero-content {
+        max-width: 100%;
+        text-align: center;
+        margin: 0 auto;
+      }
+      
+      .hero-btns {
+        justify-content: center;
+      }
+      
+      .hero-image {
+        position: relative;
+        width: 80%;
+        left: auto;
+        margin: 50px auto 0;
+      }
+      
+      .pricing-card.popular {
+        transform: none;
+      }
+      
+      .pricing-card.popular:hover {
+        transform: translateY(-10px);
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .section {
+        padding: 60px 0;
+      }
+      
+      .section-title h2 {
+        font-size: 2rem;
+      }
+      
+      .hero h1 {
+        font-size: 2rem;
+      }
+      
+      .hero p {
+        font-size: 1rem;
+      }
+      
+      .hero-btns {
+        flex-direction: column;
+        gap: 15px;
+      }
+      
+      .btn {
+        width: 100%;
+      }
+      
+      .pricing-grid,
+      .testimonials-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .footer-links {
+        flex-direction: column;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      .section-title h2 {
+        font-size: 1.8rem;
+      }
+      
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+      
+      .mobile-nav {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header id="header">
+    <div class="logo">Mediava</div>
+    <button class="hamburger" id="hamburger-menu" aria-label="القائمة" aria-expanded="false" aria-controls="mobile-nav">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <nav class="main-nav">
+      <a href="/index.html">الرئيسية</a>
+      <a href="/about.html">عننا</a>
+      <a href="/portfolio.html">أعمالنا</a>
+      <a href="/testimonials.html">آراء العملاء</a>
+      <a href="/blog.html">مدونة</a>
+      <a href="/contact.html" class="cta-btn">احجز استشارة</a>
+    </nav>
+    
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav-container">
+      <div class="mobile-nav-overlay" id="mobile-nav-overlay"></div>
+      <div class="mobile-nav" id="mobile-nav">
+        <a href="/index.html">الرئيسية</a>
+        <a href="/about.html">عننا</a>
+        <a href="/portfolio.html">أعمالنا</a>
+        <a href="/testimonials.html">آراء العملاء</a>
+        <a href="/blog.html">مدونة</a>
+        <a href="/contact.html" class="cta-btn">احجز استشارة</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="container">
+      <div class="hero-content" data-aos="fade-right">
+        <h1>وكالة تسويق رقمي متكاملة لتحقيق النجاح</h1>
+        <p>نقدم حلولاً إبداعية لتعزيز وجودك الرقمي وزيادة مبيعاتك باستخدام أحدث استراتيجيات التسويق الرقمي</p>
+        <div class="hero-btns">
+          <a href="/contact.html" class="btn">ابدأ مشروعك الآن</a>
+          <a href="/portfolio.html" class="btn btn-outline">شاهد أعمالنا</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="services section" id="services">
+    <div class="container">
+      <div class="section-title" data-aos="fade-up">
+        <h2>خدماتنا المتكاملة</h2>
+        <div class="divider"></div>
+        <p>نقدم مجموعة متكاملة من خدمات التسويق الرقمي لمساعدتك في تحقيق أهدافك</p>
+      </div>
+      
+      <div class="services-grid">
+        <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="service-icon">
+            <i class="fas fa-code"></i>
+          </div>
+          <h3>تصميم وتطوير المواقع</h3>
+          <p>تصميم مواقع احترافية متجاوبة مع جميع الأجهزة وسريعة التحميل لتحسين تجربة المستخدم وزيادة التحويلات</p>
+        </div>
+        
+        <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="service-icon">
+            <i class="fas fa-ad"></i>
+          </div>
+          <h3>إدارة الحملات الإعلانية</h3>
+          <p>حملات إعلانية مدروسة على منصات التواصل الاجتماعي وجوجل لزيادة المبيعات وتحقيق أفضل عائد على الاستثمار</p>
+        </div>
+        
+        <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="service-icon">
+            <i class="fas fa-hashtag"></i>
+          </div>
+          <h3>إدارة السوشيال ميديا</h3>
+          <p>إدارة احترافية لمواقع التواصل الاجتماعي مع محتوى متميز وجدول نشر استراتيجي لزيادة التفاعل والمتابعين</p>
+        </div>
+        
+        <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+          <div class="service-icon">
+            <i class="fas fa-search"></i>
+          </div>
+          <h3>تحسين محركات البحث (SEO)</h3>
+          <p>تحسين موقعك لمحركات البحث لزيادة الزيارات العضوية والظهور في النتائج الأولى بشكل مستدام</p>
+        </div>
+        
+        <div class="service-card" data-aos="fade-up" data-aos-delay="500">
+          <div class="service-icon">
+            <i class="fas fa-envelope"></i>
+          </div>
+          <h3>التسويق بالبريد الإلكتروني</h3>
+          <p>حملات بريدية احترافية لتحفيز العملاء الحاليين وجذب عملاء جدد مع تحليل النتائج لتحسين الأداء</p>
+        </div>
+        
+        <div class="service-card" data-aos="fade-up" data-aos-delay="600">
+          <div class="service-icon">
+            <i class="fas fa-pen-fancy"></i>
+          </div>
+          <h3>تصميم الهوية البصرية</h3>
+          <p>تصميم هوية بصرية متكاملة تعبر عن علامتك التجارية وتجذب عملائك المستهدفين</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section class="pricing section" id="pricing">
+    <div class="container">
+      <div class="section-title" data-aos="fade-up">
+        <h2>باقات التسعير</h2>
+        <div class="divider"></div>
+        <p>اختر الباقة التي تناسب احتياجاتك أو اطلب باقة مخصصة</p>
+      </div>
+      
+      <div class="pricing-grid">
+        <div class="pricing-card" data-aos="fade-up" data-aos-delay="100">
+          <h3>الباقة الأساسية</h3>
+          <div class="price">1500 <span>جنيه/شهر</span></div>
+          <ul class="pricing-features">
+            <li>12 بوست احترافي شهرياً</li>
+            <li>منصتان </li>
+            <li>رد على التعليقات</li>
+            <li>تقرير شهري مفصل</li>
+          </ul>
+          <a href="contact.html" class="btn">احجز الباقة</a>
+        </div>
+        
+        <div class="pricing-card popular" data-aos="fade-up" data-aos-delay="200">
+          <h3>الباقة المتوسطة</h3>
+          <div class="price">2500 <span>جنيه/شهر</span></div>
+          <ul class="pricing-features">
+            <li>20 بوست احترافي شهرياً</li>
+            <li>2 منصات اجتماعية</li>
+            <li>رد على التعليقات والرسائل</li>
+            <li>تقرير أداء شهري</li>
+          </ul>
+          <a href="contact.html" class="btn">احجز الباقة</a>
+        </div>
+        
+        <div class="pricing-card" data-aos="fade-up" data-aos-delay="300">
+          <h3>الباقة المتكاملة</h3>
+          <div class="price">3500 <span>جنيه/شهر</span></div>
+          <ul class="pricing-features">
+            <li>30 بوست احترافي شهرياً</li>
+            <li>2 منصات اجتماعية</li>
+            <li>رد فوري على الرسائل</li>
+            <li>تقرير أداء شهري</li>
+            <li>تصميم جرافيك احترافي</li>
+          </ul>
+          <a href="contact.html" class="btn">احجز الباقة</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="testimonials section" id="testimonials">
+    <div class="container">
+      <div class="section-title" data-aos="fade-up">
+        <h2>آراء عملائنا</h2>
+        <div class="divider"></div>
+        <p>انظر ماذا يقول عملاؤنا عن تجربتهم معنا</p>
+      </div>
+      
+      <div class="testimonials-grid">
+        <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="testimonial-text">
+            شغل ميدياڤا كان له تأثير كبير على نشاطنا التجاري، زادت المبيعات بنسبة كبيره خلال 3 أشهر فقط. فريق محترف ومتابعة ممتازة.
+          </div>
+              <h4>محمد رمضان</h4>
+              <p>صاحب رمضان جيم</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="testimonial-text">
+            بعد تعاوننا مع ميدياڤا، زاد عدد المرضى في العيادة بشكل ملحوظ. إدارة الحملات  كانت احترافية وتستهدف الفئة المناسبة.
+          </div>
+          <div class="testimonial-author">
+            <div class="author-info">
+              <h4>د. لبنى عبد التواب</h4>
+              <p>دكتورة اطفال </p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="testimonial-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="testimonial-text">
+            أفضل قرار اتخذته هو التعاقد مع ميدياڤا لإدارة السوشيال ميديا. التفاعل زاد بنسبة 100% والمبيعات تضاعفت خلال شهرين.
+          </div>
+          <div class="testimonial-author">
+            <div class="author-info">
+              <h4>علي</h4>
+              <p>صاحب VIP Brand</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Us Section -->
+  <section class="why-us section">
+    <div class="container">
+      <div class="section-title" data-aos="fade-up">
+        <h2>ليه تختار ميدياڤا؟</h2>
+        <div class="divider"></div>
+        <p>نحن نختلف عن الآخرين بأسلوبنا الفريد ونهجنا الاستراتيجي</p>
+      </div>
+      
+      <div class="why-us-grid">
+        <div class="why-us-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="why-us-icon">
+            <i class="fas fa-medal"></i>
+          </div>
+          <h3>خبرة 5+ سنوات</h3>
+          <p>خبرة واسعة في السوق المصري والعربي مع عشرات المشاريع الناجحة</p>
+        </div>
+        
+        <div class="why-us-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="why-us-icon">
+            <i class="fas fa-bullseye"></i>
+          </div>
+          <h3>استراتيجيات مخصصة</h3>
+          <p>نطور استراتيجيات تسويقية مخصصة تناسب نشاطك وأهدافك</p>
+        </div>
+        
+        <div class="why-us-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="why-us-icon">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <h3>نتائج ملموسة</h3>
+          <p>نركز على تحقيق نتائج فعلية وقياسية لضمان عائد استثمارك</p>
+        </div>
+        
+        <div class="why-us-card" data-aos="fade-up" data-aos-delay="400">
+          <div class="why-us-icon">
+            <i class="fas fa-headset"></i>
+          </div>
+          <h3>دعم فني متكامل</h3>
+          <p>فريق دعم فني متاح على مدار الساعة لمساعدتك في أي استفسار</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta section">
+    <div class="container">
+      <div class="cta-content" data-aos="zoom-in">
+        <h2>جاهز لبدء مشروعك التسويقي؟</h2>
+        <p>اتصل بنا الآن واحصل على استشارة مجانية مع خبرائنا لتطوير استراتيجية تسويقية ناجحة لنشاطك</p>
+        <a href="contact.html" class="btn">احجز استشارة مجانية</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-links">
+      <a href="index.html">الرئيسية</a>
+      <a href="about.html">عننا</a>
+      <a href="portfolio.html">أعمالنا</a>
+      <a href="testimonials.html">آراء العملاء</a>
+      <a href="blog.html">مدونة</a>
+      <a href="contact.html">تواصل معانا</a>
+    </div>
+    <div class="footer-social">
+      <a href="https://www.facebook.com/Mediavamarketing" target="_blank" aria-label="فيسبوك">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path d="M22 12C22 6.477 17.523 2 12 2C6.477 2 2 6.477 2 12C2 16.991 5.657 21.128 10.438 21.878V14.891H7.898V12H10.438V9.797C10.438 7.291 11.93 5.907 14.215 5.907C15.309 5.907 16.453 6.102 16.453 6.102V8.562H15.193C13.95 8.562 13.563 9.333 13.563 10.124V12H16.336L15.893 14.891H13.563V21.878C18.343 21.128 22 16.991 22 12Z"/>
+        </svg>
+      </a>
+      <a href="https://www.instagram.com/navomarketingagancy" target="_blank" aria-label="إنستجرام">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2.163C15.204 2.163 15.584 2.175 16.85 2.233C18.053 2.289 18.785 2.495 19.355 2.721C20.012 2.98 20.513 3.308 21.022 3.817C21.53 4.326 21.858 4.826 22.118 5.484C22.344 6.054 22.55 6.785 22.606 7.989C22.664 9.255 22.675 9.635 22.675 12.84C22.675 16.045 22.664 16.425 22.606 17.691C22.55 18.895 22.344 19.626 22.118 20.196C21.858 20.854 21.53 21.354 21.022 21.863C20.513 22.372 20.012 22.7 19.355 22.959C18.785 23.185 18.053 23.391 16.85 23.447C15.584 23.505 15.204 23.516 12 23.516C8.796 23.516 8.416 23.505 7.15 23.447C5.947 23.391 5.215 23.185 4.645 22.959C3.987 22.7 3.487 22.372 2.978 21.863C2.47 21.354 2.142 20.854 1.882 20.196C1.656 19.626 1.45 18.895 1.394 17.691C1.336 16.425 1.325 16.045 1.325 12.84C1.325 9.635 1.336 9.255 1.394 7.989C1.45 6.785 1.656 6.054 1.882 5.484C2.142 4.826 2.47 4.326 2.978 3.817C3.487 3.308 3.987 2.98 4.645 2.721C5.215 2.495 5.947 2.289 7.15 2.233C8.416 2.175 8.796 2.163 12 2.163ZM12 3.678C8.842 3.678 8.454 3.689 7.177 3.746C6.022 3.799 5.42 3.995 5.008 4.153C4.525 4.339 4.175 4.565 3.818 4.922C3.461 5.279 3.235 5.629 3.049 6.112C2.891 6.524 2.695 7.126 2.642 8.281C2.585 9.558 2.574 9.946 2.574 13.104C2.574 16.262 2.585 16.65 2.642 17.927C2.695 19.082 2.891 19.684 3.049 20.096C3.235 20.579 3.461 20.929 3.818 21.286C4.175 21.643 4.525 21.869 5.008 22.055C5.42 22.213 6.022 22.409 7.177 22.462C8.454 22.519 8.842 22.53 12 22.53C15.158 22.53 15.546 22.519 16.823 22.462C17.978 22.409 18.58 22.213 18.992 22.055C19.475 21.869 19.825 21.643 20.182 21.286C20.539 20.929 20.765 20.579 20.951 20.096C21.109 19.684 21.305 19.082 21.358 17.927C21.415 16.65 21.426 16.262 21.426 13.104C21.426 9.946 21.415 9.558 21.358 8.281C21.305 7.126 21.109 6.524 20.951 6.112C20.765 5.629 20.539 5.279 20.182 4.922C19.825 4.565 19.475 4.339 18.992 4.153C18.58 3.995 17.978 3.799 16.823 3.746C15.546 3.689 15.158 3.678 12 3.678ZM12 7.412C14.386 7.412 16.32 9.346 16.32 11.732C16.32 14.118 14.386 16.052 12 16.052C9.614 16.052 7.68 14.118 7.68 11.732C7.68 9.346 9.614 7.412 12 7.412ZM12 14.537C13.381 14.537 14.505 13.413 14.505 11.732C14.505 10.051 13.381 8.927 12 8.927C10.619 8.927 9.495 10.051 9.495 11.732C9.495 13.413 10.619 14.537 12 14.537ZM18.356 6.051C18.356 6.734 17.799 7.291 17.116 7.291C16.433 7.291 15.876 6.734 15.876 6.051C15.876 5.368 16.433 4.811 17.116 4.811C17.799 4.811 18.356 5.368 18.356 6.051Z"/>
+        </svg>
+      </a>
+      <a href="https://www.linkedin.com/in/mediava-marketing-agancey-331761359/" target="_blank" aria-label="لينكدإن">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path d="M19 3C19.5304 3 20.0391 3.21071 20.4142 3.58579C20.7893 3.96086 21 4.46957 21 5V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H19ZM18.5 18.5V13.2C18.5 12.3354 18.1565 11.5062 17.5452 10.8948C16.9338 10.2835 16.1046 9.94 15.24 9.94C14.39 9.94 13.4 10.46 12.92 11.24V10.13H10.13V18.5H12.92V13.57C12.92 12.8 13.54 12.17 14.31 12.17C14.6813 12.17 15.0374 12.3175 15.2999 12.5801C15.5625 12.8426 15.71 13.1987 15.71 13.57V18.5H18.5ZM6.88 8.56C7.32556 8.56 7.75288 8.383 8.06794 8.06794C8.383 7.75288 8.56 7.32556 8.56 6.88C8.56 5.95 7.81 5.19 6.88 5.19C6.43178 5.19 6.00193 5.36805 5.68499 5.68499C5.36805 6.00193 5.19 6.43178 5.19 6.88C5.19 7.81 5.95 8.56 6.88 8.56ZM8.27 18.5V10.13H5.5V18.5H8.27Z"/>
+        </svg>
+      </a>
+    </div>
+    <div class="copyright">
+      © 2025 Mediava - Marketing Agency. كل الحقوق محفوظة.
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <a href="#" class="back-to-top" id="back-to-top"><i class="fas fa-arrow-up"></i></a>
+
+  <!-- Scripts -->
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    // Initialize AOS animations
+    AOS.init({
+      duration: 800,
+      once: true,
+      easing: 'ease-in-out'
+    });
+  
+    // Mobile Menu Functionality - الحل النهائي المعدل
+    document.addEventListener('DOMContentLoaded', function() {
+      const hamburger = document.getElementById('hamburger-menu');
+      const mobileNav = document.getElementById('mobile-nav');
+      const overlay = document.getElementById('mobile-nav-overlay');
+      const mobileLinks = document.querySelectorAll('.mobile-nav a');
+      
+      // وظيفة فتح/إغلاق القائمة
+      function toggleMenu() {
+        const isOpen = mobileNav.classList.contains('active');
+        
+        // تبديل حالة القائمة
+        hamburger.setAttribute('aria-expanded', !isOpen);
+        hamburger.classList.toggle('active');
+        mobileNav.classList.toggle('active');
+        overlay.classList.toggle('active');
+        document.body.style.overflow = isOpen ? 'auto' : 'hidden';
+      }
+      
+      // وظيفة إغلاق القائمة
+      function closeMenu() {
+        hamburger.setAttribute('aria-expanded', 'false');
+        hamburger.classList.remove('active');
+        mobileNav.classList.remove('active');
+        overlay.classList.remove('active');
+        document.body.style.overflow = 'auto';
+      }
+      
+      // أحداث النقر
+      hamburger.addEventListener('click', toggleMenu);
+      overlay.addEventListener('click', closeMenu);
+      
+      // أحداث الروابط - النسخة النهائية الذكية
+      mobileLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+          const href = this.getAttribute('href');
+          const isCta = this.classList.contains('cta-btn');
+          // إذا كان زر CTA
+          if (isCta) {
+            e.preventDefault();
+            closeMenu();
+            setTimeout(() => {
+              window.location.href = href;
+            }, 350);
+            return;
+          }
+          // إذا كان رابط داخلي (سكرول)
+          if (href && href.startsWith('#') && href.length > 1) {
+            e.preventDefault();
+            closeMenu();
+            const targetId = href;
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+              setTimeout(() => {
+                window.scrollTo({
+                  top: targetElement.offsetTop - 80,
+                  behavior: 'smooth'
+                });
+              }, 350);
+            }
+            return;
+          }
+          // إذا كان مجرد # فقط (لا يفعل شيء)
+          if (href === '#') {
+            e.preventDefault();
+            closeMenu();
+            return;
+          }
+          // إذا كان رابط صفحة (يبدأ بـ / أو ينتهي بـ .html)
+          if ((href && href.startsWith('/')) || (href && href.endsWith('.html'))) {
+            closeMenu();
+            // لا تمنع السلوك الافتراضي، دع المتصفح يذهب للرابط بشكل طبيعي
+            return;
+          }
+        });
+      });
+      
+      // إغلاق عند الضغط على Esc
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && mobileNav.classList.contains('active')) {
+          closeMenu();
+        }
+      });
+  
+      // Back to top button
+      const backToTopBtn = document.getElementById('back-to-top');
+      if (backToTopBtn) {
+        window.addEventListener('scroll', function() {
+          if (window.scrollY > 300) {
+            backToTopBtn.classList.add('active');
+          } else {
+            backToTopBtn.classList.remove('active');
+          }
+        });
+      }
+  
+      // Smooth scrolling للروابط العادية
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          // استثناء الروابط التي ليس لها هدف (مثل #)
+          if (this.getAttribute('href') === '#') return;
+          
+          e.preventDefault();
+          const targetId = this.getAttribute('href');
+          const targetElement = document.querySelector(targetId);
+          
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 80,
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
